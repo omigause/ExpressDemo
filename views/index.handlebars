@@ -1,0 +1,40 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/members" method="POST" class="mb-4">
+   <div class="form-group">
+       <label for="text">Text</label>
+       <input type="text" name="text" class="form-control">
+   </div>
+   <div class="form-group">
+       <label for="day">Day</label>
+       <input type="text" name="day" class="form-control">
+   </div>
+   <input type="submit" value="Add Member" class="btn btn-primary btn-block">
+</form>
+<h4>Members</h4>
+<ul class="list-group">
+    {{#each members}}
+    <li class="list-group-item">{{this.text}}:{{this.day}}</li>
+    {{/each}}
+</ul>
+<br><br>
+<h1 class="text-center mb-3">{{title2}}</h1>
+<form action="/api/members2" method="POST" class="mb-4">
+   <div class="form-group">
+       <label for="name">Name</label>
+       <input type="text" name="name" class="form-control">
+   </div>
+   <div class="form-group">
+       <label for="email">Email</label>
+       <input type="email" name="email" class="form-control">
+   </div>
+   <input type="submit" value="Add Member2" class="btn btn-primary btn-block">
+</form>
+<h4>Members2</h4>
+<ul class="list-group">
+    {{#each members2}}
+        <li class="list-group-item">{{this.name}}:{{this.email}}</li>
+    {{/each}}
+</ul>
+
+<a href="/api/members" class="btn btn-light mt-4">Visit API</a>
+<a href="/api/members2" class="btn btn-light mt-4">Visit Member2 API</a>
